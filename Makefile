@@ -17,7 +17,7 @@ clean:
 # create xsd schema from rnc on the fly, fixup toplevel xsd
 $(OUTDIR)/xsd/gnc.xsd: gnucash-v2.rnc
 	@mkdir -p $(OUTDIR)/xsd
-	trang $< $@
+	java -jar trang-20030619/trang.jar $< $@
 	@cd $(OUTDIR)/xsd && patch -p0 < ../../gnc.xsd.patch
 
 # fixup generated schema
