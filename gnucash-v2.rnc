@@ -35,8 +35,8 @@ namespace lot = "http://www.gnucash.org/XML/lot"
 namespace addr = "http://www.gnucash.org/XML/addr"
 namespace owner = "http://www.gnucash.org/XML/owner"
 namespace billterm = "http://www.gnucash.org/XML/billterm"
-namespace bt-days = "http://www.gnucash.org/XML/bt-days"
-namespace bt-prox = "http://www.gnucash.org/XML/bt-prox"
+namespace bt_days = "http://www.gnucash.org/XML/bt-days"
+namespace bt_prox = "http://www.gnucash.org/XML/bt-prox"
 namespace cust = "http://www.gnucash.org/XML/cust"
 namespace employee = "http://www.gnucash.org/XML/employee"
 namespace entry = "http://www.gnucash.org/XML/entry"
@@ -371,15 +371,15 @@ BillTerm = element gnc:GncBillTerm {
   element billterm:child { attribute type { "guid" }, GUID }?,
   element billterm:parent { attribute type { "guid" }, GUID }?,
   ( element billterm:days {
-      element bt-days:due-days { xsd:int }?,
-      element bt-days:disc-days { xsd:int }?,
-      element bt-days:discount { GncNumeric }?
+      element bt_days:due-days { xsd:int }?,
+      element bt_days:disc-days { xsd:int }?,
+      element bt_days:discount { GncNumeric }?
     }
   | element billterm:proximo {
-      element bt-prox:due-day { xsd:int }?,
-      element bt-prox:disc-day { xsd:int }?,
-      element bt-prox:discount { GncNumeric }?,
-      element bt-prox:cutoff-day { xsd:int }?
+      element bt_prox:due-day { xsd:int }?,
+      element bt_prox:disc-day { xsd:int }?,
+      element bt_prox:discount { GncNumeric }?,
+      element bt_prox:cutoff-day { xsd:int }?
     }
   )
 }

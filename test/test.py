@@ -42,12 +42,14 @@ pyxb.utils.domutils.BindingDOMSupport.DeclareNamespace(ts.Namespace, 'ts')
 pyxb.utils.domutils.BindingDOMSupport.DeclareNamespace(ns._Namespace_tte, 'tte')
 pyxb.utils.domutils.BindingDOMSupport.DeclareNamespace(ns._Namespace_vendor, 'vendor')
 
+
+
 # main script
 if len(sys.argv) > 2:
     gcfile = sys.argv[1]
     outfile = sys.argv[2]
 else:
-    print "Usage: gnuc2csv.py <gnucash_file> <outfile>"
+    print("Usage: gnuc2csv.py <gnucash_file> <outfile>")
     exit(1)
 
 # read GnuCash Data
@@ -67,8 +69,8 @@ try:
     out = open(outfile, "wb")
     out.write( dom.toprettyxml(indent=" ", encoding='utf-8') )
 except pyxb.UnrecognizedContentError as e:
-    print '*** ERROR validating input:'
-    print 'Unrecognized element "%s" at %s (details: %s)' % (e.content.expanded_name, e.content.location, e.details())
+    print ('*** ERROR validating input:')
+    print ('Unrecognized element "%s" at %s (details: %s)' % (e.content.expanded_name, e.content.location, e.details()))
 except pyxb.UnrecognizedDOMRootNodeError as e:
-    print '*** ERROR matching content:'
-    print e.details()
+    print ('*** ERROR matching content:')
+    print (e.details())
