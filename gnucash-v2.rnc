@@ -64,6 +64,7 @@ CountData = element gnc:count-data {
                             attribute cd:type { "transaction" }     |
                             attribute cd:type { "schedxaction" }    |
                             attribute cd:type { "budget" }          |
+                            attribute cd:type { "price" }          |
 
 # plugins (those with a get_count slot)
 
